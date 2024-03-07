@@ -65,7 +65,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }
-$sql = "CREATE TABLE adt_chats (
+$sql = "CREATE TABLE ai_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),
@@ -77,7 +77,7 @@ if (mysqli_query($conn, $sql)) {
   echo "Error creating table: " . mysqli_error($conn);
 }
 
-$sql = "CREATE TABLE general_chats (
+$sql = "CREATE TABLE networks_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),
@@ -89,7 +89,7 @@ if (mysqli_query($conn, $sql)) {
   echo "Error creating table: " . mysqli_error($conn);
 }
 
-$sql = "CREATE TABLE systems_chats (
+$sql = "CREATE TABLE simulation_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),
@@ -100,7 +100,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }
-$sql = "CREATE TABLE analysis_chats (
+$sql = "CREATE TABLE commercial_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),
@@ -111,7 +111,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }
-$sql = "CREATE TABLE programming_chats (
+$sql = "CREATE TABLE discrete_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),
@@ -122,7 +122,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }
-$sql = "CREATE TABLE multimedia_chats (
+$sql = "CREATE TABLE graphics_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),
@@ -133,7 +133,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating table: " . mysqli_error($conn);
 }
-$sql = "CREATE TABLE operations_chats (
+$sql = "CREATE TABLE complex_chats (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30),
 chat_message VARCHAR(500),

@@ -5,10 +5,10 @@
 </head>
 <body>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "Aggreyleon";
-$dbname = "id21504468_chat_app";
+$servername = "sql307.ezyro.com";
+$username = "ezyro_35358901";
+$password = "e4ac98ad91d08f";
+$dbname = "ezyro_35358901_chat_app";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -22,7 +22,7 @@ if (!$conn) {
 		
 $username=$_POST["username"];
 $password=$_POST["password"];
-if($username != "adminpetronilla" or $password !="drpetronila") {
+if($username != "admineunice" or $password !="eunice") {
 $result = $conn->query("SELECT Full_Name FROM students1 WHERE  Username= '$username' OR Password='$password'" );
 if($result->num_rows == 0) {
 		echo "<h3>Sorry, the details you provided are not in our system</h3>";

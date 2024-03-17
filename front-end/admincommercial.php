@@ -8,14 +8,12 @@
         } 
    	
 ?>
-	
 <html lang="en">
 <head>
     <meta charset="UTF-8">
    
     <link rel="stylesheet" href="base.css">
 	<link rel="stylesheet" href="messagearea.css">
-	<link rel="stylesheet" href="department.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lato&display=swap" rel="stylesheet">
@@ -25,11 +23,43 @@
 	include("theme_settings.php");
 } 	
 	?>
+	<script Language="Javascript">
+		
+		if ( window.history.replaceState ) {
+		window.history.replaceState( null, null, window.location.href );
+		}	
+		</script>
+	<SCRIPT>
+		function validateForm1(){
+		let i=document.concernform.fullname.value;
+		if(i==""){
+		alert("Full name must be given.");
+		return false;
+		}
+		let j=document.concernform.email.value;
+		if(j==""){
+		alert("An email is required.");
+		return false;
+		}
+		let a=document.concernform.regno.value;
+		if(a==""){
+		alert("Provide your registartion number.");
+		return false;
+		}
+		let b=document.concernform.chat_message.value;
+		if(b==""){
+		alert("Please input your message.");
+		return false;
+		}
+		
+		}
+		</SCRIPT>
+ 
 </head>
 <body>
     <main>
         <nav>
-		<div id="logo">
+			<div id="logo">
 				<img src="jkuat.png">
 			</div>
             <div id="sidebar">
@@ -79,41 +109,42 @@
         </nav>
         <section id="chats">
             <div id="respondent">
-                <ion-icon name="happy-outline" id="user"></ion-icon>
+				<ion-icon name="happy-outline" id="user"></ion-icon>
                 <h4 style="color:white"><?php echo $_SESSION['username']?></h4>
-				<h1>Chats</h1>
-				
-				<button id="popup-link"><a href="admindepconcern.php" style="text-decoration:none; color:white">Concerns</a></button>
+                <h1><a href="adminclassmembers.php" style="text-decoration:none;">Commercial Programming</a></h1>
+				<button id="popup-link"><a href="adminclassconcern.php" style="text-decoration:none; color:white">Concerns</a></button>
 				
             </div>
-            <div id="noticemessages">
-				<div class="chath_link">
-					<div class="chat_header">
-						<h1>Department Room</h1>
-					</div>
-				</div>
-				<div ><a href="admincommercial.php" class="chat_link">
-					<div class="chat_icon">
-						<ion-icon name="happy-outline" id="user"></ion-icon>
-					</div>
-					<div class="chat_header">
-						<h2>3.2 Commercial Programming</h2>
-					</div></a>
-				</div>
-				<div ><a href="" class="chat_link">
-					<div class="chat_icon">
-						<ion-icon name="happy-outline" id="user"></ion-icon>
-					</div>
-					<div class="chat_header">
-						<h2>2.1 Operating Systems</h2>
-					</div></a>
-				</div>
+			
+            <div id="messages">
 				
+				<?php
 				
+					if(isset($_POST['submit'])) {
+						include("commercial_chats.php");
+					}else{
+						include("commercial_retrieve.php");
+					}?>
+				
+			</div>
+			<div >
+            <form method="post" id="text" action="admincommercial.php" enctype="multipart/form-data">
+                <label for="file-upload1" style="cursor: pointer;" id="send">
+                    <ion-icon name="cloud-upload-outline" id="upload"></ion-icon>
+                    <input type="file" id="file-upload1" name="fileitem" accept=".png, .jpg, .jpeg, .pdf" style="display:none">
+                  </label>
+				 
+                 <input type="text" name="username" value="<?php echo $_SESSION['username']?>" style="display:none">
+                
+                    <textarea name="chat_message" id="type" cols="30" rows="10" placeholder="typing.."></textarea>
+                    <button type="submit" name="submit">Send</button>
+                
+            </form>
 			</div>
         </section>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

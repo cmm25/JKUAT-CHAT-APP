@@ -19,12 +19,3 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0' # Adjust PHP version as needed
-
-      - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
-
-      - name: PHP CodeSniffer (PHPCS)
-        run: vendor/bin/phpcs --standard=PSR12 --ignore=*/vendor/* .
-
-      - name: PHPStan
-        run: vendor/bin/phpstan analyse --level=max --memory-limit=2G

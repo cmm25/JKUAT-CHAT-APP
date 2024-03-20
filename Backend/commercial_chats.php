@@ -7,7 +7,7 @@ $username = "ezyro_35358901";
 $password = "e4ac98ad91d08f";
 $dbname = "ezyro_35358901_chat_app";
 
-// Create connection
+// Create connection to the database 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
